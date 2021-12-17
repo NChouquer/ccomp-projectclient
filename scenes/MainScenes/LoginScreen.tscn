@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/MainScenes/LoginScreen.gd" type="Script" id=1]
+
+[node name="LoginScreen" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -156.5
+margin_right = 144.0
+margin_bottom = 156.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title_label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.0
+margin_top = 20.5
+margin_right = 21.0
+margin_bottom = 34.5
+text = "Login"
+
+[node name="usr_label" type="Label" parent="Panel"]
+margin_left = 44.0
+margin_top = 71.5
+margin_right = 110.0
+margin_bottom = 85.5
+text = "Username"
+
+[node name="pw_label" type="Label" parent="Panel"]
+margin_left = 44.0
+margin_top = 155.5
+margin_right = 104.0
+margin_bottom = 169.5
+text = "Password"
+
+[node name="username_input" type="LineEdit" parent="Panel"]
+margin_left = 47.0
+margin_top = 101.5
+margin_right = 247.0
+margin_bottom = 125.5
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="password_input" type="LineEdit" parent="Panel"]
+margin_left = 47.0
+margin_top = 190.5
+margin_right = 247.0
+margin_bottom = 214.5
+secret = true
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="login_button" type="Button" parent="Panel"]
+margin_left = 160.0
+margin_top = 250.0
+margin_right = 270.0
+margin_bottom = 290.0
+disabled = true
+text = "Log in"
+
+[node name="newacct_button" type="Button" parent="Panel"]
+margin_left = 19.0
+margin_top = 250.0
+margin_right = 129.0
+margin_bottom = 290.0
+disabled = true
+text = "Create account"
+
+[connection signal="pressed" from="Panel/login_button" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="Panel/newacct_button" to="." method="_on_newacct_button_pressed"]

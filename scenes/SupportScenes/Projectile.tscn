@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/arrow.png" type="Texture" id=1]
+[ext_resource path="res://scenes/SupportScenes/Projectile.gd" type="Script" id=2]
+
+[node name="Projectile" type="RigidBody2D"]
+position = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 2
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -16, -16 )
+polygon = PoolVector2Array( 17, 13, 17, 20, 23, 16 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 4
+frame = 2
+
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
